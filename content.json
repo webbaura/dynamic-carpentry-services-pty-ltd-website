@@ -1,0 +1,244 @@
+{
+  "business": {
+    "name": "Dynamic Carpentry Services Pty Ltd",
+    "tagline": "Built right. Finished properly. Melbourne carpentry you can count on.",
+    "description": "Dynamic Carpentry Services — Melbourne's reliable choice for lockup, cladding, fixing, EzyJamb and shadow line door installations. Residential & commercial.",
+    "industry": "trades",
+    "location": "Melbourne, VIC",
+    "phone": "0431 320 311",
+    "address": {
+      "city": "Melbourne, VIC",
+      "country": "AU"
+    }
+  },
+  "philosophy": "Good carpentry isn't just about what you see — it's about what holds up over time. Every project we take on, from lockup framing to the last shadow line door, gets the same attention to detail. We do the work properly so you don't have to call someone back.",
+  "seo": {
+    "siteUrl": "https://www.dynamiccarpentryservices.com.au",
+    "keywords": [
+      "carpenter Melbourne",
+      "lockup carpentry Melbourne",
+      "cladding services Melbourne",
+      "EzyJamb doors Melbourne",
+      "shadow line doors Melbourne",
+      "residential carpentry Melbourne VIC",
+      "commercial carpenter Melbourne",
+      "fixing carpentry Melbourne"
+    ]
+  },
+  "social": {
+    "instagram": "",
+    "linkedin": "",
+    "facebook": ""
+  },
+  "services": [
+    {
+      "icon": "🔩",
+      "title": "Lockup Carpentry",
+      "description": "We handle the structural carpentry that gets your build to lockup stage — framing, external doors, and everything in between. Done on schedule so the rest of your trades can follow."
+    },
+    {
+      "icon": "🪵",
+      "title": "Cladding Services",
+      "description": "Precision cladding installation for residential and commercial projects. We work with attention to detail so every board sits flush, every line is clean, and the finish lasts."
+    },
+    {
+      "icon": "🔧",
+      "title": "Fixing",
+      "description": "Internal fixing carpentry including skirting, architraves, shelving, and finishing work. The details that separate a good build from a great one — we don't cut corners here."
+    },
+    {
+      "icon": "🚪",
+      "title": "EzyJamb Doors",
+      "description": "Supply and installation of EzyJamb concealed door frame systems for a seamless, plaster-flush finish. Clean, modern results that builders and designers keep coming back for."
+    },
+    {
+      "icon": "📐",
+      "title": "Shadow Line Doors",
+      "description": "Shadow line door installation for that contemporary, frameless look that's increasingly popular across Melbourne homes. Precise fitting, no visible gaps, clean edges every time."
+    }
+  ],
+  "pages": {
+    "home": {
+      "hero": {
+        "headline": "Melbourne Carpentry Done Properly.",
+        "subheadline": "Dynamic Carpentry Services works with homeowners, builders, and property managers across Melbourne — delivering lockup, cladding, fixing, and specialist door installations that are built to last. Rated 4 stars on Google.",
+        "cta": "Get a Free Quote"
+      },
+      "services_section": {
+        "label": "WHAT WE DO",
+        "heading": "Carpentry services that cover the full build",
+        "subheading": "From structural lockup through to the final shadow line door, we handle every stage with the same care and attention to detail."
+      },
+      "sections": [
+        {
+          "id": "social-proof-bar",
+          "type": "stats_bar",
+          "items": [
+            {
+              "stat": "4★ Google Rating",
+              "label": "Rated by real Melbourne clients"
+            },
+            {
+              "stat": "Residential & Commercial",
+              "label": "Projects across Melbourne, VIC"
+            },
+            {
+              "stat": "5 Core Services",
+              "label": "Lockup to finishing — one team"
+            },
+            {
+              "stat": "0431 320 311",
+              "label": "Call us direct — no runaround"
+            }
+          ]
+        },
+        {
+          "id": "about-intro",
+          "type": "split_content",
+          "label": "WHY DYNAMIC",
+          "heading": "A carpentry team that shows up and gets it done",
+          "body": "We're not a big outfit that hands you off to a subcontractor. When you call Dynamic Carpentry Services, you get a dedicated team who knows the job and takes it seriously — from the first frame to the final door install. Based in Melbourne, working across residential and commercial projects throughout the metro area.",
+          "cta": {
+            "text": "About Us",
+            "url": "/about"
+          }
+        },
+        {
+          "id": "gallery-teaser",
+          "type": "gallery_preview",
+          "label": "OUR WORK",
+          "heading": "Real projects. Real results.",
+          "subheading": "Take a look at what we've completed for Melbourne homeowners and builders.",
+          "cta": {
+            "text": "View Our Work",
+            "url": "/portfolio"
+          }
+        },
+        {
+          "id": "cta-band",
+          "type": "cta_banner",
+          "heading": "Ready to get a quote?",
+          "subheading": "Tell us about your project and we'll get back to you fast. No obligation, no pressure.",
+          "cta": {
+            "text": "Get in Touch",
+            "url": "/contact"
+          }
+        }
+      ]
+    },
+    "about": {
+      "title": "About Dynamic Carpentry Services",
+      "headline": "Experience and attention to detail — on every single job.",
+      "content": "Dynamic Carpentry Services is a Melbourne-based carpentry business built on a straightforward idea: do the work properly, every time. Our team handles everything from structural lockup carpentry and high-quality cladding through to precision finishing work, EzyJamb door systems, and shadow line installations — across both residential homes and commercial builds throughout Melbourne, VIC.\n\nWhat sets us apart isn't a flashy sales pitch — it's the consistency of our work. Our clients are builders, property managers, and homeowners who need a carpenter they can trust to turn up, communicate clearly, and deliver a finish they're proud of. That's exactly what we do. Our 4-star Google rating reflects the relationships we've built with clients who keep coming back.\n\nEvery project we take on gets treated with the same level of care — whether it's a full lockup frame for a new build or a clean shadow line door installation in a renovation. We're based in Melbourne and work across the metro area. If you've got a project that needs proper carpentry, we'd like to hear about it.",
+      "values": [
+        {
+          "title": "Attention to Detail",
+          "body": "Good carpentry lives or dies on the details — a board that's slightly off, a door that doesn't sit flush, a cladding line that isn't true. We slow down where it counts so you end up with a finish that actually looks and performs the way it should."
+        },
+        {
+          "title": "Straight Talking",
+          "body": "We don't overquote, underdeliver, or disappear after the job starts. You get honest timelines, clear communication, and a team that tells you what's happening at every stage. No surprises on the invoice."
+        },
+        {
+          "title": "Built to Last",
+          "body": "We work across Melbourne on projects that have to hold up — structurally and visually. Whether it's lockup framing or a finished shadow line door, we're building it to the standard we'd want in our own homes."
+        }
+      ]
+    },
+    "services": {
+      "headline": "What we do — and what you get.",
+      "subheadline": "Five specialist services. One reliable team. All delivered across Melbourne, VIC.",
+      "items": [
+        {
+          "title": "Lockup Carpentry",
+          "description": "Structural carpentry to bring your build to lockup stage — framing, external doors, windows, and all associated carpentry. We work to builders' schedules so your project keeps moving without delays.",
+          "price": ""
+        },
+        {
+          "title": "Cladding Services",
+          "description": "High-quality cladding installation for residential and commercial projects across Melbourne. Our experience means every board is fitted with precision — clean lines, correct fixings, and a result built for the long term.",
+          "price": ""
+        },
+        {
+          "title": "Fixing",
+          "description": "Internal finishing carpentry including skirting boards, architraves, and all associated fixing work. This is where the detail really shows — and where we make sure everything is exactly right before we leave.",
+          "price": ""
+        },
+        {
+          "title": "EzyJamb Doors",
+          "description": "Specialist installation of EzyJamb concealed door frame systems that deliver a seamless, flush-plaster finish. Popular with renovators and builders chasing a clean, contemporary look without the bulk of traditional frames.",
+          "price": ""
+        },
+        {
+          "title": "Shadow Line Doors",
+          "description": "Precision installation of shadow line door systems for a modern, frameless aesthetic. The gap-free, shadow line reveal is a signature of quality finishing — and we install them to a standard that stands up to scrutiny.",
+          "price": ""
+        }
+      ]
+    },
+    "portfolio": {
+      "headline": "Our Work",
+      "subheadline": "Lockup frames, cladding, finishing work, and door installations — all completed by our team across Melbourne.",
+      "items": [
+        {
+          "title": "Coming Soon",
+          "description": "We're putting together a full project gallery. In the meantime, call us on 0431 320 311 to talk through what we've built.",
+          "url": "#"
+        }
+      ]
+    },
+    "contact": {
+      "headline": "Let's talk about your project.",
+      "subheadline": "Whether you're a homeowner, builder, or property manager — reach out and we'll get back to you quickly with a straight answer.",
+      "email": "hello@dynamiccarpentryserv.com.au",
+      "cta": "Get a Free Quote"
+    }
+  },
+  "gallery": {
+    "label": "OUR WORK",
+    "heading": "Dynamic Carpentry Services Pty Ltd in action",
+    "subheading": "A look at what we do — real work, real results.",
+    "images": [
+      {
+        "src": "/gallery/01.jpg",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 1",
+        "caption": ""
+      },
+      {
+        "src": "/gallery/02.jpg",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 2",
+        "caption": ""
+      },
+      {
+        "src": "/gallery/03.jpg",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 3",
+        "caption": ""
+      },
+      {
+        "src": "/gallery/04.jpg",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 4",
+        "caption": ""
+      },
+      {
+        "src": "/gallery/05.jpg",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 5",
+        "caption": ""
+      },
+      {
+        "src": "/gallery/06.jpg",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 6",
+        "caption": ""
+      },
+      {
+        "src": "/gallery/07.jpg",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 7",
+        "caption": ""
+      },
+      {
+        "src": "/gallery/08.jpg",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 8",
+        "caption": ""
+      }
+    ]
+  }
+}

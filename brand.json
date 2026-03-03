@@ -1,0 +1,89 @@
+{
+  "primary": "#0A0A0A",
+  "secondary": "#111111",
+  "accent": "#F59E0B",
+  "accentHover": "#F59E0B",
+  "background": "#0A0A0A",
+  "surface": "#111111",
+  "border": "rgba(255,255,255,0.08)",
+  "muted": "#6B7280",
+  "text": "#F9FAFB",
+  "textMuted": "rgba(249,250,251,0.55)",
+  "white": "#FFFFFF",
+  "design": {
+    "hero_style": "split-left",
+    "nav_style": "solid",
+    "layout_density": "open",
+    "grid_style": "single-col",
+    "type_scale": "large",
+    "visual_weight": "balanced",
+    "heading_style": "sans-bold",
+    "mood": "trustworthy",
+    "uses_animation": true,
+    "uses_gradient": false,
+    "cta_style": "bold-dark",
+    "should_include_stats": true,
+    "should_include_social_proof": true,
+    "reference_count": 5,
+    "reference_notes": "[House Cleaning & Handyman Services]: Handy uses a clean, high-contrast teal brand colour paired with approachable photography of uniformed workers to establish professionalism and trust. The service cards employ a consistent icon-plus-label pattern with green icon backgrounds that create visual anchoring without overwhelming whitespace. The minimal hero copy and immediate service entry points prioritise conversion efficiency over storytelling.\n[Linear – The system for product development]: Linear employs an ultra-minimal dark aesthetic with near-black backgrounds and low-contrast gray typography that creates a sophisticated, almost cinematic restraint. The oversized display heading with extremely light weight communicates confidence without aggression, letting whitespace do the heavy lifting. The product screenshot below the fold is deliberately blurred/dark, drawing focus to the typography hierarchy and reinforcing an editorial, premium software identity.\n[The AI workspace that works for you. | Notion]: Notion uses extreme typographic contrast — a massive, heavy sans-serif headline paired with lightweight body copy — to communicate confidence without visual clutter. The product UI screenshot grounds the abstract value proposition in concrete reality, while the trusted-brand logo strip provides credibility through association rather than statistics. The near-zero use of colour forces attention onto copy and hierarchy, making the single blue CTA button the only deliberate chromatic signal on the page.",
+    "reference_urls": [
+      "https://www.handybook.com",
+      "https://linear.app",
+      "https://www.notion.so",
+      "https://vercel.com",
+      "https://stripe.com"
+    ],
+    "gallery_photos": [
+      {
+        "localPath": "/home/jiraiya/agency/builder/places/photos/31/01.jpg",
+        "filename": "01",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 1",
+        "caption": ""
+      },
+      {
+        "localPath": "/home/jiraiya/agency/builder/places/photos/31/02.jpg",
+        "filename": "02",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 2",
+        "caption": ""
+      },
+      {
+        "localPath": "/home/jiraiya/agency/builder/places/photos/31/03.jpg",
+        "filename": "03",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 3",
+        "caption": ""
+      },
+      {
+        "localPath": "/home/jiraiya/agency/builder/places/photos/31/04.jpg",
+        "filename": "04",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 4",
+        "caption": ""
+      },
+      {
+        "localPath": "/home/jiraiya/agency/builder/places/photos/31/05.jpg",
+        "filename": "05",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 5",
+        "caption": ""
+      },
+      {
+        "localPath": "/home/jiraiya/agency/builder/places/photos/31/06.jpg",
+        "filename": "06",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 6",
+        "caption": ""
+      },
+      {
+        "localPath": "/home/jiraiya/agency/builder/places/photos/31/07.jpg",
+        "filename": "07",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 7",
+        "caption": ""
+      },
+      {
+        "localPath": "/home/jiraiya/agency/builder/places/photos/31/08.jpg",
+        "filename": "08",
+        "alt": "Dynamic Carpentry Services Pty Ltd — photo 8",
+        "caption": ""
+      }
+    ],
+    "services_style": "numbered-list",
+    "gallery_style": "masonry"
+  }
+}

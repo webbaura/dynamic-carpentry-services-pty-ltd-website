@@ -1,0 +1,52 @@
+{
+  "score": 7,
+  "passes": true,
+  "strengths": [
+    "Dark colour scheme is consistently applied across all pages creating a premium trades aesthetic",
+    "Gold/amber accent colour on CTAs provides strong visual contrast against dark backgrounds",
+    "Split-left hero layout is correctly implemented with headline left and visual element right",
+    "Typography hierarchy is clear with bold oversized headlines contrasting well against body copy",
+    "Services section uses numbered items with clear structure, supporting scannability for trade customers",
+    "About page philosophy quote block adds credibility and brand voice consistency",
+    "Navigation is clean and uncluttered with a prominent CTA button differentiated from nav links"
+  ],
+  "issues": [
+    {
+      "element": "hero",
+      "severity": "high",
+      "issue": "The right side of the hero shows only a placeholder 'Dynamic' text element with no real imagery — missing a photo of actual carpentry work or team which would dramatically increase trust signals",
+      "fix": "Replace the placeholder visual with a high-quality photo of completed carpentry work, a job site, or the team — real imagery is critical for trades lead generation"
+    },
+    {
+      "element": "services-section",
+      "severity": "medium",
+      "issue": "Service items lack visual differentiation — no icons, imagery, or cards to break up the list, making the section feel text-heavy and harder to scan quickly",
+      "fix": "Add simple trade-relevant icons or a subtle card background to each service item to improve scannability and visual interest"
+    },
+    {
+      "element": "overall",
+      "severity": "medium",
+      "issue": "Portfolio/work section images are all broken or not loading, which critically undermines social proof for a trades business where past work is a primary trust factor",
+      "fix": "Upload and properly link real project photos — this section should showcase 6-9 high quality images of completed jobs as it is central to lead conversion"
+    },
+    {
+      "element": "hero",
+      "severity": "medium",
+      "issue": "No visible CTA button in the hero section on the homepage — the primary conversion action is absent from the most valuable real estate on the page",
+      "fix": "Add a prominent amber CTA button ('Get a Free Quote' or 'Get in Touch') directly beneath the hero headline, above the fold"
+    },
+    {
+      "element": "typography",
+      "severity": "low",
+      "issue": "Body copy appears quite small at mobile-equivalent scale in the screenshots, potentially reducing readability for older tradespeople or homeowner demographics",
+      "fix": "Increase body font size to minimum 16px and ensure line-height is at least 1.6 for comfortable reading"
+    },
+    {
+      "element": "cta",
+      "severity": "low",
+      "issue": "Only one CTA ('Ready to get started?') appears at the bottom of the homepage — insufficient conversion prompts throughout the page journey",
+      "fix": "Add a secondary CTA after the services section and ensure each service description links or prompts contact to capture intent at multiple scroll depths"
+    }
+  ],
+  "verdict": "A well-branded dark trades website with strong colour execution and correct layout structure, but broken portfolio images and a missing hero CTA are significant conversion blockers that must be fixed before launch."
+}

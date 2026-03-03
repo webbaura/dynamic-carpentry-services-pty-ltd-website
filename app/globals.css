@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+/* ── Brand tokens — Tailwind v4 @theme ──────────────────────────────────
+   Scaffold stage replaces hex values at build time from brand.json.
+   @theme tokens automatically generate bg-*, text-*, border-* utilities.
+─────────────────────────────────────────────────────────────────────── */
+@theme {
+  --color-primary:     #0A0A0A;
+  --color-secondary:   #111111;
+  --color-accent:      #F59E0B;
+  --color-accent-hover:#F59E0B;
+  --color-background:  #0A0A0A;
+  --color-surface:     #111111;
+  --color-border:      rgba(255,255,255,0.08);
+  --color-muted:       #6B7280;
+  --color-text:        #F9FAFB;
+  --font-family-heading: var(--font-jakarta, system-ui);
+}
+
+/* ── Explicit CSS var aliases — belt + suspenders for Tailwind v4 ──────── */
+:root {
+  --color-primary:     #0A0A0A;
+  --color-secondary:   #111111;
+  --color-accent:      #F59E0B;
+  --color-accent-hover:#F59E0B;
+  --color-background:  #0A0A0A;
+  --color-surface:     #111111;
+  --color-border:      rgba(255,255,255,0.08);
+  --color-muted:       #6B7280;
+  --color-text:        #F9FAFB;
+  --color-text-muted:  rgba(249,250,251,0.55);
+}
+
+/* ── Colour utilities (manual fallback if Tailwind @theme doesn't generate them) */
+.bg-background  { background-color: var(--color-background) !important; }
+.bg-surface     { background-color: var(--color-surface) !important; }
+.bg-primary     { background-color: var(--color-primary) !important; }
+.bg-accent      { background-color: var(--color-accent) !important; }
+.text-accent    { color: var(--color-accent) !important; }
+.text-muted     { color: var(--color-muted) !important; }
+.border-accent  { border-color: var(--color-accent) !important; }
+.border-border  { border-color: var(--color-border) !important; }
+
+/* ── Base ─────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text, #F9FAFB);
+  overflow-x: hidden;
+}
+
+/* ── Scroll animations ───────────────────────────────────────────────── */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.animate-fade-up.in-view  { opacity: 1; transform: translateY(0); }
+
+.animate-fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.animate-fade-in.in-view  { opacity: 1; }
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.animate-slide-left.in-view { opacity: 1; transform: translateX(0); }
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.animate-slide-right.in-view { opacity: 1; transform: translateX(0); }
+
+/* Stagger children */
+.stagger > *:nth-child(1) { transition-delay: 0ms;   }
+.stagger > *:nth-child(2) { transition-delay: 80ms;  }
+.stagger > *:nth-child(3) { transition-delay: 160ms; }
+.stagger > *:nth-child(4) { transition-delay: 240ms; }
+.stagger > *:nth-child(5) { transition-delay: 320ms; }
+.stagger > *:nth-child(6) { transition-delay: 400ms; }
+
+/* ── Hover effects ───────────────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* ── Gradient text ───────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Noise texture overlay (subtle, adds depth) ─────────────────────── */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Focus styles (accessibility) ───────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-background); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
