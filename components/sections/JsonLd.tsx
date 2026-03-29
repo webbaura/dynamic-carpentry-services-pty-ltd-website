@@ -6,7 +6,7 @@ export default function JsonLd() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': ['LocalBusiness', 'Organization'],
+        '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
         '@id': `${content.seo?.siteUrl || ''}/#organization`,
         name: biz.name,
         description: biz.description,
@@ -14,23 +14,32 @@ export default function JsonLd() {
         logo: { '@type': 'ImageObject', url: `${content.seo?.siteUrl || ''}/logo.png` },
         address: biz.address ? {
           '@type': 'PostalAddress',
-          streetAddress:   biz.address.street  || '',
-          addressLocality: biz.address.city    || '',
-          addressRegion:   biz.address.state   || '',
+          addressLocality: biz.address.city || '',
+          addressRegion:   biz.address.state || 'VIC',
           addressCountry:  biz.address.country || 'AU',
         } : undefined,
         telephone: biz.phone || undefined,
         email:     content.pages.contact.email || undefined,
-        sameAs:    content.social ? Object.values(content.social).filter(Boolean) : [],
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4',
+          reviewCount: '8',
+          bestRating: '5',
+        },
+        areaServed: {
+          '@type': 'City',
+          name: 'Melbourne',
+        },
+        priceRange: '$$',
+        sameAs: content.social ? Object.values(content.social).filter(Boolean) : [],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Services',
+          name: 'Carpentry Services',
           itemListElement: (content.pages.services.items ?? []).map((s, i) => ({
             '@type': 'Offer',
             position: i + 1,
             name: s.title,
             description: s.description,
-            price: s.price || undefined,
           })),
         },
       },

@@ -1,37 +1,54 @@
 @import "tailwindcss";
 
-/* ── Brand tokens — Tailwind v4 @theme ──────────────────────────────────
-   Scaffold stage replaces hex values at build time from brand.json.
-   @theme tokens automatically generate bg-*, text-*, border-* utilities.
-─────────────────────────────────────────────────────────────────────── */
+/*
+ * DESIGN DIRECTION — Dynamic Carpentry Services
+ *
+ * Business type: trades (considered — project-based carpentry)
+ * Primary CTA: Phone call 0431 320 311 + quote form
+ * Visitor mindset: "I need a reliable carpenter I can trust for my build"
+ *
+ * Visual direction (original, derived from reference study):
+ * Mood: industrial-refined — the precision of modern carpentry expressed visually
+ * Typography: Barlow Condensed headings (tight, structural), DM Sans body (clean, readable)
+ * Colour: near-black base (#0A0A0A), warm amber accent (#F59E0B) used sparingly on CTAs
+ * Hero: split-left — bold headline with geometric accent, phone CTA prominent
+ * What makes this distinctive: Typography weight and condensed headings evoke structural
+ *   framing — the letterforms feel built, not decorated. Amber accent is warm like timber.
+ *
+ * References studied: Tradie Guys, Trade Heroes, Handy, Linear, Notion
+ * Key extractions: whitespace discipline from Linear, trust-first layout from trades refs,
+ *   numbered service list for scannability, restrained colour palette
+ */
+
+/* ── Brand tokens — Tailwind v4 @theme ─────────────────────────────── */
 @theme {
-  --color-primary:     #0A0A0A;
-  --color-secondary:   #111111;
-  --color-accent:      #F59E0B;
-  --color-accent-hover:#F59E0B;
-  --color-background:  #0A0A0A;
-  --color-surface:     #111111;
-  --color-border:      rgba(255,255,255,0.08);
-  --color-muted:       #6B7280;
-  --color-text:        #F9FAFB;
-  --font-family-heading: var(--font-jakarta, system-ui);
+  --color-primary:      #0A0A0A;
+  --color-secondary:    #111111;
+  --color-accent:       #F59E0B;
+  --color-accent-hover: #D97706;
+  --color-background:   #0A0A0A;
+  --color-surface:      #111111;
+  --color-border:       rgba(255,255,255,0.08);
+  --color-muted:        #6B7280;
+  --color-text:         #F9FAFB;
+  --font-family-heading: var(--font-barlow), system-ui;
 }
 
-/* ── Explicit CSS var aliases — belt + suspenders for Tailwind v4 ──────── */
+/* ── Explicit CSS var aliases ──────────────────────────────────────── */
 :root {
-  --color-primary:     #0A0A0A;
-  --color-secondary:   #111111;
-  --color-accent:      #F59E0B;
-  --color-accent-hover:#F59E0B;
-  --color-background:  #0A0A0A;
-  --color-surface:     #111111;
-  --color-border:      rgba(255,255,255,0.08);
-  --color-muted:       #6B7280;
-  --color-text:        #F9FAFB;
-  --color-text-muted:  rgba(249,250,251,0.55);
+  --color-primary:      #0A0A0A;
+  --color-secondary:    #111111;
+  --color-accent:       #F59E0B;
+  --color-accent-hover: #D97706;
+  --color-background:   #0A0A0A;
+  --color-surface:      #111111;
+  --color-border:       rgba(255,255,255,0.08);
+  --color-muted:        #6B7280;
+  --color-text:         #F9FAFB;
+  --color-text-muted:   rgba(249,250,251,0.55);
 }
 
-/* ── Colour utilities (manual fallback if Tailwind @theme doesn't generate them) */
+/* ── Colour utilities ──────────────────────────────────────────────── */
 .bg-background  { background-color: var(--color-background) !important; }
 .bg-surface     { background-color: var(--color-surface) !important; }
 .bg-primary     { background-color: var(--color-primary) !important; }
@@ -41,7 +58,7 @@
 .border-accent  { border-color: var(--color-accent) !important; }
 .border-border  { border-color: var(--color-border) !important; }
 
-/* ── Base ─────────────────────────────────────────────────────────────── */
+/* ── Base ──────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
@@ -52,7 +69,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Scroll animations ───────────────────────────────────────────────── */
+/* ── Scroll animations ─────────────────────────────────────────────── */
 .animate-fade-up {
   opacity: 0;
   transform: translateY(32px);
@@ -88,7 +105,7 @@ body {
 .stagger > *:nth-child(5) { transition-delay: 320ms; }
 .stagger > *:nth-child(6) { transition-delay: 400ms; }
 
-/* ── Hover effects ───────────────────────────────────────────────────── */
+/* ── Hover effects ─────────────────────────────────────────────────── */
 .card-hover {
   transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease;
 }
@@ -97,7 +114,7 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* ── Gradient text ───────────────────────────────────────────────────── */
+/* ── Gradient text ─────────────────────────────────────────────────── */
 .gradient-text {
   background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
   -webkit-background-clip: text;
@@ -105,7 +122,7 @@ body {
   background-clip: text;
 }
 
-/* ── Noise texture overlay (subtle, adds depth) ─────────────────────── */
+/* ── Noise texture overlay ─────────────────────────────────────────── */
 .noise::after {
   content: '';
   position: absolute;
@@ -115,14 +132,14 @@ body {
   z-index: 0;
 }
 
-/* ── Focus styles (accessibility) ───────────────────────────────────── */
+/* ── Focus styles (accessibility) ──────────────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* ── Scrollbar ───────────────────────────────────────────────────────── */
+/* ── Scrollbar ─────────────────────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--color-background); }
 ::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }

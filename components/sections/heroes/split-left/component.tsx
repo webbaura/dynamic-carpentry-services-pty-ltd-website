@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
+import { Phone } from 'lucide-react';
 import { Animate } from '@/components/ui/Animate';
 import type { SiteContent } from '@/lib/content';
 import type { BrandConfig } from '@/lib/brand';
@@ -12,160 +14,152 @@ interface Props {
 
 export default function HeroSplit({ content, brand }: Props) {
   const hero = content.pages.home.hero;
-  const stats = content.pages.home.stats;
+  const phone = content.business.phone || '';
+  const phoneHref = `tel:${phone.replace(/\s/g, '')}`;
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
-
-      {/* Decorative right-side accent shape */}
+      {/* Subtle accent glow */}
       <div
-        className="absolute right-0 top-0 bottom-0 w-1/2 opacity-5 pointer-events-none"
+        className="absolute right-0 top-0 bottom-0 w-1/2 opacity-[0.04] pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse at 80% 50%, var(--color-accent), transparent 70%)`,
+          background: 'radial-gradient(ellipse at 80% 50%, var(--color-accent), transparent 70%)',
         }}
         aria-hidden="true"
       />
 
-      {/* Vertical accent line — left edge detail */}
+      {/* Vertical accent line */}
       <div
-        className="absolute left-0 top-1/4 bottom-1/4 w-px opacity-30"
-        style={{ background: `linear-gradient(to bottom, transparent, var(--color-accent), transparent)` }}
+        className="absolute left-0 top-1/4 bottom-1/4 w-px opacity-20"
+        style={{ background: 'linear-gradient(to bottom, transparent, var(--color-accent), transparent)' }}
         aria-hidden="true"
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-
           {/* Left — text */}
           <div>
-            {/* Industry label */}
             <Animate variant="fade-up" delay={0}>
               <div className="flex items-center gap-3 mb-8">
                 <div
-                  className="w-8 h-0.5"
-                  style={{ background: `var(--color-accent)` }}
+                  className="w-10 h-0.5"
+                  style={{ background: 'var(--color-accent)' }}
                   aria-hidden="true"
                 />
                 <span
-                  className="text-xs font-semibold tracking-widest uppercase"
-                  style={{ color: `var(--color-accent)` }}
+                  className="text-xs font-semibold tracking-[0.2em] uppercase"
+                  style={{ color: 'var(--color-accent)' }}
                 >
-                  {content.business.industry || brand.tagline}
+                  {content.business.industry || 'Carpentry'}
                 </span>
               </div>
             </Animate>
 
             <Animate variant="fade-up" delay={0.1}>
               <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-6"
-                style={{ fontFamily: 'var(--font-heading)' }}
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-white mb-6"
+                style={{ fontFamily: 'var(--font-barlow, system-ui)' }}
               >
-                {hero.headline}
+                {hero.headline?.split('\n').map((line, i) => (
+                  <span key={i}>
+                    {i > 0 && <br />}
+                    {line}
+                  </span>
+                ))}
               </h1>
             </Animate>
 
             <Animate variant="fade-up" delay={0.2}>
-              <p className="text-lg leading-relaxed text-white/60 mb-10 max-w-lg">
-                {hero.value_prop || hero.subheadline}
+              <p className="text-lg leading-relaxed text-white/50 mb-10 max-w-lg">
+                {hero.subheadline}
               </p>
             </Animate>
 
+            {/* CTAs */}
             <Animate variant="fade-up" delay={0.3}>
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-7 py-3.5 text-sm font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                  className="inline-flex items-center justify-center px-7 py-4 text-sm font-bold rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg uppercase tracking-wider"
                   style={{
-                    background: `var(--color-accent)`,
+                    background: 'var(--color-accent)',
                     color: '#fff',
-                    boxShadow: `0 0 0 0 var(--color-accent)`,
+                    boxShadow: '0 8px 24px color-mix(in srgb, var(--color-accent) 30%, transparent)',
                   }}
                 >
-                  {hero.cta_primary || 'Get started'}
+                  {hero.cta_primary || 'Get a Free Quote'}
                 </Link>
-                {hero.cta_secondary && (
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold rounded-xl border text-white/70 hover:text-white transition-all duration-200 hover:-translate-y-0.5"
-                    style={{ borderColor: 'rgba(255,255,255,0.12)' }}
-                  >
-                    {hero.cta_secondary}
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                )}
+                <a
+                  href={phoneHref}
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold rounded-lg border text-white/80 hover:text-white transition-all duration-200 hover:-translate-y-0.5"
+                  style={{ borderColor: 'rgba(255,255,255,0.15)' }}
+                >
+                  <Phone size={16} strokeWidth={2.5} />
+                  {phone}
+                </a>
               </div>
             </Animate>
 
             {/* Trust line */}
             {hero.trust_line && (
               <Animate variant="fade-up" delay={0.4}>
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-2" aria-hidden="true">
-                    {[0,1,2,3].map(i => (
-                      <div
-                        key={i}
-                        className="w-7 h-7 rounded-full border-2 border-background"
-                        style={{ background: `hsl(${200 + i * 30}, 60%, 50%)` }}
-                      />
-                    ))}
-                  </div>
-                  <p className="text-sm text-white/50">{hero.trust_line}</p>
-                </div>
+                <p className="text-sm text-white/35">{hero.trust_line}</p>
               </Animate>
             )}
           </div>
 
-          {/* Right — visual block */}
+          {/* Right — gallery preview grid */}
           <Animate variant="slide-right" delay={0.2}>
-            <div className="relative">
-              {/* Main visual card */}
-              <div
-                className="relative rounded-2xl overflow-hidden aspect-[4/3]"
-                style={{
-                  background: `linear-gradient(135deg, var(--color-surface, #1a1a2e) 0%, rgba(255,255,255,0.03) 100%)`,
-                  border: '1px solid rgba(255,255,255,0.08)',
-                }}
-              >
-                {/* Decorative content — replaced with real image in production */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div
-                      className="text-6xl font-bold tracking-tight mb-2"
-                      style={{ color: `var(--color-accent)`, fontFamily: 'var(--font-heading)' }}
-                    >
-                      {content.business.name?.split(' ')[0] || '✦'}
-                    </div>
-                    <div className="text-white/30 text-sm">Replace with hero image</div>
+            <div className="relative hidden lg:block">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-3">
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/5]" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
+                    <Image
+                      src="/gallery/01.jpg"
+                      alt="Lockup framing — residential build"
+                      fill
+                      className="object-cover"
+                      sizes="25vw"
+                      priority
+                    />
+                  </div>
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/3]" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
+                    <Image
+                      src="/gallery/03.jpg"
+                      alt="Fixing work — skirting and architraves"
+                      fill
+                      className="object-cover"
+                      sizes="25vw"
+                    />
                   </div>
                 </div>
-
-                {/* Overlay gradient */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-1/3"
-                  style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.4), transparent)' }}
-                  aria-hidden="true"
-                />
-              </div>
-
-              {/* Floating stat card */}
-              {stats && stats[0] && (
-                <div
-                  className="absolute -bottom-5 -left-5 rounded-xl px-5 py-4"
-                  style={{
-                    background: `var(--color-accent)`,
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                  }}
-                >
-                  <div className="text-2xl font-bold text-white">{stats[0].value}</div>
-                  <div className="text-xs text-white/80 mt-0.5">{stats[0].label}</div>
+                <div className="space-y-3 pt-8">
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/3]" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
+                    <Image
+                      src="/gallery/02.jpg"
+                      alt="Cladding installation — Melbourne home"
+                      fill
+                      className="object-cover"
+                      sizes="25vw"
+                    />
+                  </div>
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/5]" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
+                    <Image
+                      src="/gallery/04.jpg"
+                      alt="Commercial carpentry project"
+                      fill
+                      className="object-cover"
+                      sizes="25vw"
+                    />
+                  </div>
                 </div>
-              )}
+              </div>
 
               {/* Decorative dot grid */}
               <div
-                className="absolute -top-4 -right-4 w-24 h-24 opacity-20"
+                className="absolute -top-4 -right-4 w-20 h-20 opacity-15"
                 style={{
-                  backgroundImage: `radial-gradient(var(--color-accent) 1px, transparent 1px)`,
+                  backgroundImage: 'radial-gradient(var(--color-accent) 1px, transparent 1px)',
                   backgroundSize: '8px 8px',
                 }}
                 aria-hidden="true"

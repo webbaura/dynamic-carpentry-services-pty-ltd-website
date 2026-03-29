@@ -1,18 +1,27 @@
 import type { Metadata } from 'next';
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import { Barlow_Condensed, DM_Sans } from 'next/font/google';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/sections/JsonLd';
 import { content } from '@/lib/content';
-import { getCSSVariables } from '@/lib/brand';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta', display: 'swap' });
+const barlow = Barlow_Condensed({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+  variable: '--font-barlow',
+  display: 'swap',
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
-    default: content.business.name,
+    default: `Carpenter in Melbourne | ${content.business.name}`,
     template: `%s | ${content.business.name}`,
   },
   description: content.business.description,
@@ -25,7 +34,7 @@ export const metadata: Metadata = {
     locale: 'en_AU',
     url: content.seo?.siteUrl || '/',
     siteName: content.business.name,
-    title: content.business.name,
+    title: `Carpenter in Melbourne | ${content.business.name}`,
     description: content.business.description,
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -44,11 +53,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
-      <head>
-        <style dangerouslySetInnerHTML={{ __html: getCSSVariables() }} />
-      </head>
-      <body className="font-sans">
+    <html lang="en-AU" className={`${barlow.variable} ${dmSans.variable}`}>
+      <body className="font-sans" style={{ fontFamily: 'var(--font-dm-sans, system-ui)' }}>
         <JsonLd />
         <Nav />
         <main>{children}</main>

@@ -24,7 +24,7 @@ export default function ServicesList({ content }: Props) {
               <Animate variant="fade-up" delay={0.1}>
                 <h2
                   className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mt-4 text-white"
-                  style={{ fontFamily: 'var(--font-heading)' }}
+                  style={{ fontFamily: 'var(--font-barlow, system-ui)' }}
                 >
                   {section?.heading || 'What we offer'}
                 </h2>
@@ -46,7 +46,7 @@ export default function ServicesList({ content }: Props) {
                   <div className="flex-1">
                     <h3
                       className="text-lg font-semibold text-white mb-2 group-hover:text-accent transition-colors duration-200"
-                      style={{ fontFamily: 'var(--font-heading)', color: 'inherit' }}
+                      style={{ fontFamily: 'var(--font-barlow, system-ui)', color: 'inherit' }}
                     >
                       {service.title}
                     </h3>
@@ -55,7 +55,7 @@ export default function ServicesList({ content }: Props) {
                     </p>
                   </div>
                   <div
-                    className="flex-shrink-0 mt-1 text-white/20 group-hover:text-white/60 transition-colors duration-200 group-hover:translate-x-1 transition-transform"
+                    className="flex-shrink-0 mt-1 text-white/20 group-hover:text-white/60 transition-colors group-hover:translate-x-1 transition-transform duration-200"
                     aria-hidden="true"
                   >
                     →

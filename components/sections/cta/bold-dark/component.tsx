@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Phone } from 'lucide-react';
 import { Animate } from '@/components/ui/Animate';
 import type { SiteContent } from '@/lib/content';
 
@@ -8,15 +9,16 @@ interface Props { content: SiteContent; }
 
 export default function CtaBoldDark({ content }: Props) {
   const cta = content.pages.home.cta;
+  const phone = content.business.phone || '';
+  const phoneHref = `tel:${phone.replace(/\s/g, '')}`;
 
   return (
     <section className="relative py-28 overflow-hidden bg-background">
-
       {/* Accent glow */}
       <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
+        className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse at 50% 100%, var(--color-accent), transparent 70%)`,
+          background: 'radial-gradient(ellipse at 50% 100%, var(--color-accent), transparent 70%)',
         }}
         aria-hidden="true"
       />
@@ -24,7 +26,7 @@ export default function CtaBoldDark({ content }: Props) {
       {/* Top border */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: `linear-gradient(to right, transparent, var(--color-accent), transparent)` }}
+        style={{ background: 'linear-gradient(to right, transparent, var(--color-accent), transparent)' }}
         aria-hidden="true"
       />
 
@@ -32,15 +34,15 @@ export default function CtaBoldDark({ content }: Props) {
         <Animate variant="fade-up">
           <h2
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white mb-6"
-            style={{ fontFamily: 'var(--font-heading)' }}
+            style={{ fontFamily: 'var(--font-barlow, system-ui)' }}
           >
-            {cta?.heading || `Ready to get started?`}
+            {cta?.heading || 'Ready to get started?'}
           </h2>
         </Animate>
 
         {cta?.subheading && (
           <Animate variant="fade-up" delay={0.1}>
-            <p className="text-lg text-white/55 leading-relaxed mb-10 max-w-xl mx-auto">
+            <p className="text-lg text-white/50 leading-relaxed mb-10 max-w-xl mx-auto">
               {cta.subheading}
             </p>
           </Animate>
@@ -50,22 +52,21 @@ export default function CtaBoldDark({ content }: Props) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold rounded-xl text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl"
+              className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold rounded-lg text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl uppercase tracking-wider"
               style={{
-                background: `var(--color-accent)`,
-                boxShadow: `0 8px 32px color-mix(in srgb, var(--color-accent) 40%, transparent)`,
+                background: 'var(--color-accent)',
+                boxShadow: '0 8px 32px color-mix(in srgb, var(--color-accent) 40%, transparent)',
               }}
             >
               {cta?.cta_primary || 'Get in touch'}
             </Link>
-            {cta?.cta_secondary && (
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold rounded-xl text-white/60 hover:text-white transition-colors duration-200"
-              >
-                {cta.cta_secondary} <span aria-hidden="true">→</span>
-              </Link>
-            )}
+            <a
+              href={phoneHref}
+              className="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold rounded-lg text-white/60 hover:text-white transition-colors duration-200"
+            >
+              <Phone size={16} strokeWidth={2.5} />
+              {cta?.cta_secondary || phone}
+            </a>
           </div>
         </Animate>
       </div>

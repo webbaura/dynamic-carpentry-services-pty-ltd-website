@@ -5,6 +5,19 @@ export interface PortfolioItem { title: string; description: string; url: string
 export interface Value         { title: string; body: string; }
 export interface Stat          { value: string; label: string; }
 
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface Gallery {
+  label?: string;
+  heading?: string;
+  subheading?: string;
+  images: GalleryImage[];
+}
+
 export interface Content {
   business: {
     name:        string;
@@ -27,6 +40,7 @@ export interface Content {
     facebook?:  string;
     twitter?:   string;
   };
+  gallery?: Gallery;
   pages: {
     home: {
       hero: {
@@ -38,13 +52,14 @@ export interface Content {
         trust_line?:  string;
         cta_primary?: string;
         cta_secondary?:string;
-        cta?:         string;   // legacy
+        cta?:         string;
         image_alt?:   string;
       };
       stats?:           Stat[];
       services_section?:{ label?: string; heading?: string; subheading?: string; };
       cta?:             { heading?: string; subheading?: string; cta_primary?: string; cta_secondary?: string; };
       sections?:        unknown[];
+      [key: string]:    unknown;
     };
     about:     { title?: string; headline: string; content: string; values?: Value[]; };
     services:  { headline: string; subheadline?: string; items?: ServiceItem[]; };
